@@ -38,7 +38,7 @@ void fillSimple(int size)
       }
     }
     num++;
-    if (i == N)
+    if (i == size)
     {
       stop++;
     }
