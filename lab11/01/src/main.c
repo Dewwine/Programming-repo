@@ -86,11 +86,13 @@ void repeat(int * arr, int N) {
     }
     count = 1;
   }
-
+  
   for (int i = 0; *(res + i) != 0; i++)
   {
     printf("%d\t", *(res + i));
   }
+  
+  free(res);
 }
 
 void print(int * arr, int N) {
