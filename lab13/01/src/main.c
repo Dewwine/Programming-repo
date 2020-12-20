@@ -51,6 +51,9 @@ int wordsInStr(char *str)
     *(srt_str + i) = (char *)calloc((strlen(str) + 1), sizeof(char));
   }
 
+  char *str_tmp = calloc((strlen(str) + 1), sizeof(char));
+
+
   char *str1 = strtok(str, " ");
 
   for (int i = 0; str1 != NULL; i++)
@@ -66,7 +69,6 @@ int wordsInStr(char *str)
   printf("%d", count);
   printf("\n");
 
-  char *str_tmp = calloc((strlen(str) + 1), sizeof(char));
 
   for (int i = 1; i < strlen(str); i++)
   {
