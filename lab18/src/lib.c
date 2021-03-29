@@ -75,7 +75,7 @@ char *insert(char *s1, char *s2, int pos)
 
     memcpy(str, s1, pos);
     memcpy(str + pos, s2, sizeof(char) * strlen(s2));
-    strcat(str, s1 + pos);
+    memcpy(str + pos + strlen(s2), s1 + pos, strlen(s1 + pos));
 
     return str;
 }
@@ -85,7 +85,7 @@ char *reduce(char *s1, int start, int end)
     char *str = malloc(sizeof(char) * (strlen(s1) + 1));
 
     memcpy(str, s1, start);
-    strcat(str, s1 + end + 1);
+    memcpy(str + start, s1 + end + 1, strlen(s1) - end);
 
     return str;
 }
@@ -116,7 +116,6 @@ file * add_struct(file *files, int N)
 
 file * remove_struct(file *files, int N)
 {
-
     printf("\nВведите номер структуры, которую нужно удалить(0-%d): \n", N - 1);
     int to_remove;
     scanf("%d", &to_remove);

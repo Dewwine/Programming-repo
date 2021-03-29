@@ -7,7 +7,7 @@
  * оперування ними
  *
  * @author Babenko A.
- * @date 20-feb-2020
+ * @date 20-mar-2020
  * @version 1.0
  */
 
@@ -15,6 +15,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h> 
+
+#define DEBUG printf("\n Date: %s\n Time: %s\n Name of function: %s\n\n", __DATE__, __TIME__, __FUNCTION__)
 
 /**
  * Структура «Доступи»
@@ -38,6 +41,9 @@ typedef struct
     char extension[4];
 } file;
 
+/**
+ * Структура «Вузол»
+ */
 typedef struct _Node
 {
     file myfile;
@@ -45,6 +51,9 @@ typedef struct _Node
     struct _Node *prev;
 } Node;
 
+/**
+ * Структура «список»
+ */
 typedef struct _DblLinkedList
 {
     size_t size;
@@ -52,8 +61,19 @@ typedef struct _DblLinkedList
     Node *tail;
 } DblLinkedList;
 
-DblLinkedList *createDblLinkedList();
+/**
+ * Створення двохзв'язного списку.
+ *
+ * Функція створює двохзв'язний список та повертає покажчик на перший його елемент
+ * @return покажчик на перший елемент списку
+ */
+extern DblLinkedList *createDblLinkedList();
 
-void deleteDblLinkedList(DblLinkedList **list);
+/**
+ * Видалення двохзв'язного списку.
+ *
+ * Функція очищає пам'ять яка була використана для двохзв'язного списку
+ */
+extern void deleteDblLinkedList(DblLinkedList **list);
 
 #endif

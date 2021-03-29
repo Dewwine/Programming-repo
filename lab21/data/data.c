@@ -7,7 +7,6 @@
  * @version 1.0
  */
 
-#include "list.h"
 #include "data.h"
 
 bool bool_input(char *str)
@@ -104,6 +103,8 @@ void read_list_from_file(DblLinkedList *list, char *filename)
     }
 
     fclose(fp);
+
+    DEBUG;
 }
 
 void write_list_to_file(DblLinkedList *list, char *filename)
@@ -129,6 +130,8 @@ void write_list_to_file(DblLinkedList *list, char *filename)
     fclose(fp);
 
     printf("Successfully written\n");
+
+    DEBUG;
 }
 
 void output_list(DblLinkedList *list)
@@ -149,6 +152,8 @@ void output_list(DblLinkedList *list)
 
         tmp = tmp->next;
     }
+
+    DEBUG;
 }
 
 void output_node(Node *node)
@@ -162,6 +167,8 @@ void output_node(Node *node)
     printf("Writeable: %s\n", bool_output(node->myfile.access.write));
     printf("Executable: %s\n", bool_output(node->myfile.access.execute));
     printf("File extension: %s\n", node->myfile.extension);
+
+    DEBUG;
 }
 
 void find_list(DblLinkedList *list)
@@ -270,6 +277,8 @@ void find_list(DblLinkedList *list)
     default:
         break;
     }
+    
+    DEBUG;
 }
 
 Node *getNth(DblLinkedList *list, size_t index)
@@ -297,6 +306,8 @@ Node *getNth(DblLinkedList *list, size_t index)
             i--;
         }
     }
+
+    DEBUG;
 
     return tmp;
 }
@@ -361,6 +372,8 @@ void add_to_list(DblLinkedList *list, int index)
     }
 
     list->size++;
+
+    DEBUG;
 }
 
 void remove_from_list(DblLinkedList *list, int index)
@@ -389,6 +402,8 @@ void remove_from_list(DblLinkedList *list, int index)
     free(elm);
 
     list->size--;
+
+    DEBUG;
 }
 
 void sort_by_criterion(DblLinkedList *list)
@@ -472,4 +487,6 @@ void sort_by_criterion(DblLinkedList *list)
         else
             node = node->next;
     }
+
+    DEBUG;
 }

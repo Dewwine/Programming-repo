@@ -16,14 +16,18 @@
  * Послідовність дій:
  * - зчитування кількості строк у файлі
  * - ініціалізація масиву структур
- * - виклик функції createDblLinkedList()
- * - виклик функції read_list_from_file()
- * - виклик функції output_list()
- * - виклик функції обраної користувачем
+ * - виклик функції read_from_file()
+ * - виклик функції write_to_file_bin()
+ * - виклик функції read_from_file_bin()
+ * - виклик функції output()
+ * - ініціалізація номеру структури для пошуку
+ * - виклик функції find_struct()
  * @return успішний код виконання програми (0)
  */
 int main()
 {
+  clock_t start = clock();
+
   srand(time(0));
   int N = count_lines("input.txt");
   printf("Elements in linked link: %d\n", N);
@@ -70,5 +74,11 @@ int main()
   }
 
   deleteDblLinkedList(&list);
-  return 0;
+
+  clock_t end = clock();
+  float time_spent = (float)(end - start) / CLOCKS_PER_SEC; 
+
+  #ifdef DEBUG
+  printf(" Time of program working: %f sec\n", time_spent);
+  #endif
 }

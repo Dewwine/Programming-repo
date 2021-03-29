@@ -1,5 +1,5 @@
-#ifndef _BABENKO_19_
-#define _BABENKO_19_
+#ifndef _BABENKO_20_
+#define _BABENKO_20_
 
 /**
  * @file data.h
@@ -20,7 +20,7 @@
  * @param str строка для переводу
  * @return значення true або false
  */
-bool bool_input(char *str);
+extern bool bool_input(char *str);
 
 /**
  * Переведення булевого типу в строку.
@@ -29,7 +29,7 @@ bool bool_input(char *str);
  * @param b булевий тип даних для переводу
  * @return строку "true" або "false"
  */
-char *bool_output(bool b);
+extern char *bool_output(bool b);
 
 /**
  * Генерація псевдовипадкових чисел.
@@ -37,7 +37,7 @@ char *bool_output(bool b);
  * Функція генерує псевдовипадкове число
  * @return псевдовипадкове число типу int
  */
-int randomer();
+extern int randomer();
 
 /**
  * Генерація псевдовипадкових чисел.
@@ -45,7 +45,7 @@ int randomer();
  * Функція генерує псевдовипадкове число
  * @return псевдовипадкове число типу float
  */
-float random_float();
+extern float random_float();
 
 /**
  * Генерація псевдовипадкових чисел.
@@ -53,7 +53,7 @@ float random_float();
  * Функція генерує псевдовипадкове булеве значення
  * @return псевдовипадкове булеве значення
  */
-bool random_bool();
+extern bool random_bool();
 
 /**
  * Підрахування кількості строк.
@@ -62,7 +62,7 @@ bool random_bool();
  * @param filename назва файлу
  * @return кількість строк у файлі
  */
-int count_lines(char *filename);
+extern int count_lines(char *filename);
 
 /**
  *  Зчитування з файлу.
@@ -71,7 +71,7 @@ int count_lines(char *filename);
  *  @param list - показчик на структуру, в якій зберігається розмір списку та показчики на його голову та хвіст
  *  @param filename - назва файлу, з якого зчитується інформація 
  */
-void read_list_from_file(DblLinkedList *list, char *filename);
+extern void read_list_from_file(DblLinkedList *list, char *filename);
 
 /**
  *  Записування у файл.
@@ -80,7 +80,7 @@ void read_list_from_file(DblLinkedList *list, char *filename);
  *  @param list - показчик на структуру, в якій зберігається розмір списку та показчики на його голову та хвіст
  *  @param filename - назва файлу, у який записується інформація 
  */
-void write_list_to_file(DblLinkedList *list, char *filename);
+extern void write_list_to_file(DblLinkedList *list, char *filename);
 
 /**
  *  Виведення на екран всього списку відразу.
@@ -88,7 +88,7 @@ void write_list_to_file(DblLinkedList *list, char *filename);
  *  Функції виводять інформацію зі списку на екран
  *  @param list - показчик на структуру, в якій зберігається розмір списку та показчики на його голову та хвіст
  */
-void output_list(DblLinkedList *list);
+extern void output_list(DblLinkedList *list);
 
 /**
  *  Виведення одного елементу (вузла) списку.
@@ -96,7 +96,7 @@ void output_list(DblLinkedList *list);
  *  Функції виводять інформацію з одного елементу списку
  *  @param node - елемент списку
  */
-void output_node(Node *node);
+extern void output_node(Node *node);
 
 /**
  *  Пошук файлу за критерієм.
@@ -104,7 +104,7 @@ void output_node(Node *node);
  *  Функція шукає заданий файл за певним критерієм
  *  @param list - показчик на структуру, в якій зберігається розмір списку та показчики на його голову та хвіст
  */
-void find_list(DblLinkedList *list);
+extern void find_list(DblLinkedList *list);
 
 /**
  * Отримання елементу списку.
@@ -114,7 +114,7 @@ void find_list(DblLinkedList *list);
  * @param index - індекс елементу
  * @return tmp - шуканий вузол
  */
-Node *getNth(DblLinkedList *list, size_t index);
+extern Node *getNth(DblLinkedList *list, size_t index);
 
 /**
  *  Додавання структури у список.
@@ -123,7 +123,7 @@ Node *getNth(DblLinkedList *list, size_t index);
  * @param list - показчик на структуру, в якій зберігається розмір списку та показчики на його голову та хвіст
  * @param index - індекс 
  */
-void add_to_list(DblLinkedList *list, int index);
+extern void add_to_list(DblLinkedList *list, int index);
 
 /**
  *  Видалення структури зі списку.
@@ -132,7 +132,7 @@ void add_to_list(DblLinkedList *list, int index);
  * @param list - показчик на структуру, в якій зберігається розмір списку та показчики на його голову та хвіст
  * @param index - індекс
  */
-void remove_from_list(DblLinkedList *list, int index);
+extern void remove_from_list(DblLinkedList *list, int index);
 
 /** 
  * Сортування списку.
@@ -140,6 +140,6 @@ void remove_from_list(DblLinkedList *list, int index);
  * Функція сортує список за певними критеріями
  * @param list - показчик на структуру, в якій зберігається розмір списку та показчики на його голову та хвіст
  */
-void sort_by_criterion(DblLinkedList *list);
+extern void sort_by_criterion(DblLinkedList *list);
 
 #endif

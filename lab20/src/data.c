@@ -13,29 +13,39 @@
 bool bool_input(char *str)
 {
     return (strcmp(str, "true") == 0) ? true : false;
+
+    DEBUG;
 }
 
 char *bool_output(bool b)
 {
     return (b) ? ("true") : ("false");
+
+    DEBUG;
 }
 
 int randomer()
 {
     int num = rand() % 10 + 1;
     return num;
+
+    DEBUG;
 }
 
 float random_float()
 {
     float num = rand() % 10 + 1 + (double)((rand() % 1000)) / 1000;
     return num;
+
+    DEBUG;
 }
 
 bool random_bool()
 {
     int num = rand() % 2;
     return (num == 1) ? true : false;
+
+    DEBUG;
 }
 
 int count_lines(char *filename)
@@ -53,10 +63,13 @@ int count_lines(char *filename)
     lines_count++;
     fclose(fp);
     return lines_count;
+
+    DEBUG;
 }
 
 void read_list_from_file(DblLinkedList *list, char *filename)
 {
+
     char isVisible[20];
     char access_r[20];
     char access_w[20];
@@ -104,10 +117,13 @@ void read_list_from_file(DblLinkedList *list, char *filename)
     }
 
     fclose(fp);
+
+    DEBUG;
 }
 
 void write_list_to_file(DblLinkedList *list, char *filename)
 {
+
     FILE *fp = fopen(filename, "w");
 
     Node *p = list->head;
@@ -129,10 +145,13 @@ void write_list_to_file(DblLinkedList *list, char *filename)
     fclose(fp);
 
     printf("Successfully written\n");
+
+    DEBUG;
 }
 
 void output_list(DblLinkedList *list)
 {
+
     Node *tmp = list->head;
 
     for (int i = 0; i < list->size; i++)
@@ -149,10 +168,13 @@ void output_list(DblLinkedList *list)
 
         tmp = tmp->next;
     }
+
+    DEBUG;
 }
 
 void output_node(Node *node)
 {
+
     printf("\n\n\n\n");
 
     printf("Visibility: %s\n", bool_output(node->myfile.isVisible));
@@ -162,10 +184,13 @@ void output_node(Node *node)
     printf("Writeable: %s\n", bool_output(node->myfile.access.write));
     printf("Executable: %s\n", bool_output(node->myfile.access.execute));
     printf("File extension: %s\n", node->myfile.extension);
+
+    DEBUG;
 }
 
 void find_list(DblLinkedList *list)
 {
+
     Node *p = list->head;
 
     printf("\nPick criterion for searching: \nVisibility[1]                \nFilename[2]\nFile size[3]                            \nReadability[4]\nWriteability[5]                        \nExecuteability[6]\nFile extension[7]                         \nEnter yout number: ");
@@ -270,10 +295,13 @@ void find_list(DblLinkedList *list)
     default:
         break;
     }
+    
+    DEBUG;
 }
 
 Node *getNth(DblLinkedList *list, size_t index)
 {
+
     Node *tmp = NULL;
     size_t i;
 
@@ -298,11 +326,14 @@ Node *getNth(DblLinkedList *list, size_t index)
         }
     }
 
+    DEBUG;
+
     return tmp;
 }
 
 void add_to_list(DblLinkedList *list, int index)
 {
+
     Node *elm = NULL;
     Node *ins = (Node *)malloc(sizeof(Node));
     elm = getNth(list, index);
@@ -361,10 +392,13 @@ void add_to_list(DblLinkedList *list, int index)
     }
 
     list->size++;
+
+    DEBUG;
 }
 
 void remove_from_list(DblLinkedList *list, int index)
 {
+
     Node *elm = NULL;
     elm = getNth(list, index);
 
@@ -389,10 +423,13 @@ void remove_from_list(DblLinkedList *list, int index)
     free(elm);
 
     list->size--;
+
+    DEBUG;
 }
 
 void sort_by_criterion(DblLinkedList *list)
 {
+
     int criterion = 0;
     printf("\nPick criterion for sorting: \nVisibility[1]                \nFilename[2]\nFile size[3]                            \nReadability[4]\nWriteability[5]                        \nExecuteability[6]\nFile extension[7]                         \nEnter yout number: ");
     scanf("%d", &criterion);
@@ -472,4 +509,6 @@ void sort_by_criterion(DblLinkedList *list)
         else
             node = node->next;
     }
+
+    DEBUG;
 }

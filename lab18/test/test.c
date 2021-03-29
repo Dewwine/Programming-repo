@@ -63,7 +63,8 @@ unsigned short test_add_struct()
 	file *test_array = calloc(n, sizeof(file));
 	generation(test_array, n);
 
-	add_struct(test_array, n);
+	test_array = add_struct(test_array, n);
+	output(test_array, n + 1);
 
 	for (int i = 0; i < n + 1; i++)
 	{
@@ -93,7 +94,7 @@ unsigned short test_remove_struct()
 	file *test_array = calloc(n, sizeof(file));
 	generation(test_array, n);
 
-	remove_struct(test_array, n);
+	test_array = remove_struct(test_array, n);
 
 	for (int i = 0; i < n; i++)
 	{

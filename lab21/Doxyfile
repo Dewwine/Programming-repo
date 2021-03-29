@@ -1,6 +1,6 @@
 ## Common Project info
-PROJECT_NAME = "Лабораторна робота №18"
-PROJECT_BRIEF = "Динамічні масиви"
+PROJECT_NAME = "Лабораторна робота №15-17"
+PROJECT_BRIEF = "Структуровані типи даних. Модульні тести"
 PROJECT_NUMBER = 1.0
 
 ## output options
