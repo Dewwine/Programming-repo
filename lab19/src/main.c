@@ -69,6 +69,5 @@ int main()
     break;
   }
 
-  deleteDblLinkedList(&list);
   return 0;
 }

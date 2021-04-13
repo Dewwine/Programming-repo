@@ -2,7 +2,7 @@ targets = main.bin test.bin
 CC = gcc 
 C_OPTS = -std=gnu11 -g -Wall -Wextra -Wformat-security -Wfloat-equal -Wshadow -Wconversion -Wlogical-not-parentheses -Wnull-dereference -I./src 
 
-all: clean prep gen_static_lib compile run
+all: clean prep gen_dynamic_lib compile run
 
 clean:
 	rm -rf dist
