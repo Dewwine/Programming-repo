@@ -30,7 +30,6 @@ int **Array::ReadFile(string filename)
                 {
                     throw "В файле больше строк чем указано";
                 }
-                //Создадим поток для считывания данных из строчки
                 istringstream iss(line);
                 std::string token;
                 int i = 0;

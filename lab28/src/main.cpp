@@ -6,8 +6,7 @@ int main()
     int **arrays;
     int *res_arr;
 
-    arrays = a.ReadFile("input2.txt");
-    // res_arr = a.AverageArray(arrays);
+    arrays = a.ReadFile("input.txt");
     res_arr = a.SumArray(arrays);
     a.WriteOut("output.txt", res_arr);
 

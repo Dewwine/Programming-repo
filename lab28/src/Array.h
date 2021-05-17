@@ -17,7 +17,6 @@ public:
     int **ReadFile(string filename);
 
     int *SumArray(int **arrays);
-    // int *AverageArray(int **arrays);
     void WriteOut(string filename, int *res_arr);
     void FreeMemory(int **arr);
 };
