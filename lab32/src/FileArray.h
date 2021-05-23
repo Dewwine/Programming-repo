@@ -1,5 +1,5 @@
 /**
- * @file VideoArray.hpp
+ * @file FileArray.hpp
  * @brief Файл з прототипами методів оперування класом
  *
  * @author Babenko A.
@@ -7,30 +7,33 @@
  * @version 1.0
  */
 
-#ifndef _VideoArray_
-#define _VideoArray_
+#ifndef _FileArray_
+#define _FileArray_
 
+#include <File.h>
 #include <Videofile.h>
+#include <Imagefile.h>
+
+using std::vector;
+
 /**
  * Класс колекції файлів
 */
-class VideoArray
+class FileArray
 {
-private:
-    Videofile **array_;
-    unsigned int size_;
-    unsigned int max_size_;
+public:
+    vector<File *> files;
 
 public:
     /**
      *  Конструктор с параметрами
      */
-    VideoArray(unsigned int max_size = 4);
+    FileArray(unsigned int N = 4);
 
     /**
      *  Деструктор
      */
-    ~VideoArray();
+    ~FileArray();
 
     /**
      *  Додавання екземпляру класу у колекцію.
@@ -38,7 +41,7 @@ public:
      * Функція додає елемент в динамічний масив 
      * @param str - строка, яка буде додана
      */
-    void AddFile(string str);
+    void AddFile(File *file);
 
     /**
      * Видалення екземпляру класу з колекцію.
@@ -49,35 +52,11 @@ public:
     void RemoveFile(unsigned int index);
 
     /**
-     * Повернення файлу з колекції.
-     *
-     * Функція повертає елемент з динамічного масиву за індексом 
-     * @param index - індекс екземпляру класу, який буде видано
-     * @return *(this->array_ + index) - шуканий елемент
-     */
-    Videofile *GetFile(unsigned int index) const;
-
-    /**
-     * Виведення всіх файлів колекції.
-     *
-     * Функція виводить всі елементи динамічного масиву 
-     */
-    void ShowAll() const;
-
-    /**
      * Виведення файлів колекції > 50kb.
      *
      * Функція виводить всі елементи динамічного масиву > 50kb 
      */
     void PickBySize() const;
-
-    /**
-     * Повернення данних з поля екземпляру класу.
-     *
-     * Функція повертає поле size_ 
-     * @return this->size_ - поле екземпляру класу
-     */
-    unsigned int GetSize() const;
 
     /**
      * Читання з файлу.
@@ -95,11 +74,13 @@ public:
      */
     void writeToFile(string filename);
 
-    Videofile *operator[](int index) const;
+    void ShowAll();
 
-    friend ostream &operator<<(ostream &out, const VideoArray &array);
+    friend ostream &operator<<(ostream &out, FileArray &array);
 
-    friend istream &operator>>(istream &in, VideoArray &array);
+    void SortBySize();
+
+    void ConcVec(vector<File *> v2);
 };
 
 #endif
