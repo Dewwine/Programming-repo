@@ -22,7 +22,6 @@ void Controller::readFromFile(string path)
     unsigned int i = 0;
     while (getline(fin, tmp_result))
     {
-      int fileType;
       const regex videoReg("^((true)|(false)) [\\w\\d]+ [\\d\\.\\d]+ ((true)|(false)) ((true)|(false)) ((true)|(false)) [\\w\\d]+ [\\d]+ [\\d]+$");
       const regex imageReg("^((true)|(false)) [\\w\\d]+ [\\d\\.\\d]+ ((true)|(false)) ((true)|(false)) ((true)|(false)) [\\w\\d]+ [\\d]+ [\\d]+ [\\d]+$");
 
@@ -46,6 +45,7 @@ void Controller::readFromFile(string path)
 
   fin.close();
 }
+
 void Controller::writeToFile(string path)
 {
   ofstream fout;
