@@ -24,11 +24,6 @@ public:
 
 public:
     /**
-     * Конструктор за замовчуванням
-     */
-    // FileArray();
-
-    /**
      * Конструктор з параметрами
      */
     FileArray(unsigned int N = 4);

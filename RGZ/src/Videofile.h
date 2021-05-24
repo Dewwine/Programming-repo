@@ -50,28 +50,81 @@ public:
               int frameRate);
 
     /**
-     *  Деструктор
+     * Запис данних в поле екземпляру класу.
+     *
+     * Функція записує дані в поле resolution_ 
+     * @param resolution - дані для запису
      */
-    // ~Videofile();
-
     void SetResolution(int resolution);
 
+    /**
+     * Запис данних в поле екземпляру класу.
+     *
+     * Функція записує дані в поле frameRate_ 
+     * @param frameRate - дані для запису
+     */
     void SetFramerate(int frameRate);
 
+    /**
+     * Повернення данних з поля екземпляру класу.
+     *
+     * Функція повертає поле dotsPerInch_ 
+     * @return this->resolution_ - поле екземпляру класу
+     */
     int GetResolution() const;
 
+    /**
+     * Повернення данних з поля екземпляру класу.
+     *
+     * Функція повертає поле dotsPerInch_ 
+     * @return this->frameRate_ - поле екземпляру класу
+     */
     int GetFramerate() const;
 
+    /**
+     * Виведення параметрів на екран.
+     *
+     * Функція виводить дані з параметрів на екран 
+     */
     void PrintParams() override final;
 
+    /**
+     * Приведення до строки.
+     *
+     * Функція приводить дані до строки 
+     * @return str - строка екземпляру класу
+     */
     virtual string toString() final;
 
+    /**
+     * Приведення до екземпляру.
+     *
+     * Функція приводить дані зі до строки екземпляру класу 
+     */
     virtual void fromString(string result) final;
 
+    /**
+     * Оператор порівняння
+     *
+     * Оператор порівнює переданий об'єкт  
+     * @param file - екземпляр класу
+     */
     bool operator==(const Videofile &videofile) const;
 
+    /**
+     * Оператор введення
+     *
+     * Оператор вводить дані з потоку 
+     * @param file - екземпляр класу
+     */
     friend ostream &operator<<(ostream &out, const Videofile &videofile);
 
+    /**
+     * Оператор виведення
+     *
+     * Оператор виводить дані з потоку 
+     * @param file - екземпляр класу
+     */
     friend istream &operator>>(istream &in, Videofile &videofile);
 };
 

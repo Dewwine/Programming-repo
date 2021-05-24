@@ -63,10 +63,12 @@ bool File::GetReadPermission() const
 {
     return this->permission_.read_;
 }
+
 bool File::GetWritePermission() const
 {
     return this->permission_.write_;
 }
+
 bool File::GetExecutePermission() const
 {
     return this->permission_.execute_;
@@ -101,10 +103,12 @@ void File::SetReadPermission(bool read)
 {
     this->permission_.read_ = read;
 }
+
 void File::SetWritePermission(bool write)
 {
     this->permission_.write_ = write;
 }
+
 void File::SetExecutePermission(bool execute)
 {
     this->permission_.execute_ = execute;

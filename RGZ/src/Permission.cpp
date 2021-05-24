@@ -22,10 +22,3 @@ Permission::Permission(bool read, bool write, bool execute)
     this->write_ = write;
     this->execute_ = execute;
 }
-
-// Permission::Permission(struct Permission *permission)
-// {
-//     this->read_ = permission->read_;
-//     this->write_ = permission->write_;
-//     this->execute_ = permission->execute_;
-// }

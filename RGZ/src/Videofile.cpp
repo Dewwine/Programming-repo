@@ -37,10 +37,6 @@ Videofile::Videofile(bool isVisible,
     this->SetResolution(resolution);
 }
 
-// Videofile::~Videofile()
-// {
-// }
-
 void Videofile::SetResolution(int resolution)
 {
     switch (resolution)

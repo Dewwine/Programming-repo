@@ -51,10 +51,6 @@ Imagefile::Imagefile(bool isVisible,
     this->dotsPerInch_ = dotsPerInch;
 }
 
-// Imagefile::~Imagefile()
-// {
-// }
-
 void Imagefile::SetImageSize(int width, int height)
 {
     this->imgSize_.width_ = width;

@@ -50,30 +50,90 @@ public:
               int dotsPerInch);
 
     /**
-     *  Деструктор
+     * Запис данних в поле екземпляру класу.
+     *
+     * Функція записує дані в поле width_ и height_
+     * @param width - дані для запису
+     * @param height - дані для запису
      */
-    // ~Imagefile();
-
     void SetImageSize(int width, int height);
 
+    /**
+     * Запис данних в поле екземпляру класу.
+     *
+     * Функція записує дані в поле extension_ 
+     * @param dotsPerInch - дані для запису
+     */
     void SetDotsPerInch(int dotsPerInch);
 
+    /**
+     * Повернення данних з поля екземпляру класу.
+     *
+     * Функція повертає поле width_ 
+     * @return this->imgSize_.width_ - поле екземпляру класу
+     */
     int GetImageSizeWidth() const;
 
+    /**
+     * Повернення данних з поля екземпляру класу.
+     *
+     * Функція повертає поле height_ 
+     * @return this->imgSize_.height_ - поле екземпляру класу
+     */
     int GetImageSizeHeight() const;
 
+    /**
+     * Повернення данних з поля екземпляру класу.
+     *
+     * Функція повертає поле dotsPerInch_ 
+     * @return this->dotsPerInch_ - поле екземпляру класу
+     */
     int GetDotsPerInch() const;
 
+    /**
+     * Виведення параметрів на екран.
+     *
+     * Функція виводить дані з параметрів на екран 
+     */
     void PrintParams() override final;
 
+    /**
+     * Приведення до строки.
+     *
+     * Функція приводить дані до строки 
+     * @return str - строка екземпляру класу
+     */
     virtual string toString() override final;
 
+    /**
+     * Приведення до екземпляру.
+     *
+     * Функція приводить дані зі до строки екземпляру класу 
+     */
     virtual void fromString(string result) override final;
 
+    /**
+     * Оператор порівняння
+     *
+     * Оператор порівнює переданий об'єкт  
+     * @param file - екземпляр класу
+     */
     bool operator==(const Imagefile &imagefile) const;
 
+    /**
+     * Оператор введення
+     *
+     * Оператор вводить дані з потоку 
+     * @param file - екземпляр класу
+     */
     friend ostream &operator<<(ostream &out, const Imagefile &imagefile);
 
+    /**
+     * Оператор виведення
+     *
+     * Оператор виводить дані з потоку 
+     * @param file - екземпляр класу
+     */
     friend istream &operator>>(istream &in, Imagefile &imagefile);
 };
 

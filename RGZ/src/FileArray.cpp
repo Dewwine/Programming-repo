@@ -9,11 +9,6 @@
 
 #include <FileArray.h>
 
-// FileArray::FileArray()
-// {
-//     cout << "Викликано конструктор за замовчуванням" << endl;
-// }
-
 FileArray::FileArray(unsigned int N)
 {
     cout << "Викликано конструктор з параметрами" << endl;

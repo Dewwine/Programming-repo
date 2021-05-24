@@ -97,7 +97,8 @@ void Controller::SortByFileName()
 {
   sort(filesVector.begin(), filesVector.end(), SortFileName);
 }
-void Controller::SortBySortExtension()
+
+void Controller::SortByExtension()
 {
   sort(filesVector.begin(), filesVector.end(), SortExtension);
 }

@@ -103,7 +103,7 @@ void Menu::start()
       files.SortBySize();
       break;
     case 3:
-      files.SortBySortExtension();
+      files.SortByExtension();
       break;
 
     default:

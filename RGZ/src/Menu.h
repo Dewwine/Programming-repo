@@ -21,8 +21,14 @@ private:
   Controller files;
 
 public:
+  /**
+   *  Деструктор
+   */
   ~Menu();
 
+  /**
+   *  Метод запускає меню
+   */
   void start();
 };
 

@@ -19,7 +19,6 @@ struct Permission
 {
     Permission();
     Permission(bool read, bool write, bool execute);
-    // Permission(struct Permission *permission);
 
     bool read_;
     bool write_;
